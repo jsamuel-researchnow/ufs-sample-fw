@@ -1,5 +1,7 @@
 package com.dynata.ufs.fruitwarehouse.service
 
-interface FruitService {
+import org.springframework.http.ResponseEntity
 
+interface FruitService {
+    ResponseEntity getFruits()
 }
