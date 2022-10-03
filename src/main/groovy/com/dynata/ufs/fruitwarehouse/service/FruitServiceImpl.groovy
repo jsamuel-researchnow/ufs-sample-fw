@@ -1,5 +1,6 @@
 package com.dynata.ufs.fruitwarehouse.service
 
+import com.dynata.ufs.fruitwarehouse.model.Fruit
 import com.dynata.ufs.fruitwarehouse.persistence.FruitRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -15,7 +16,16 @@ class FruitServiceImpl implements FruitService {
         this.fruitRepository = fruitRepository
     }
 
-    static ResponseEntity getFruits() {
-        ResponseEntity.ok("return all fruits")
+    ResponseEntity getFruits() {
+        ResponseEntity.ok(getAllFruits())
+    }
+
+
+    private getAllFruits() {
+        fruitRepository.findAll()
+    }
+
+    private Fruit saveFruit(Fruit fruit) {
+        fruitRepository.save(fruit)
     }
 }
