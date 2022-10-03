@@ -4,6 +4,7 @@ import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
+import java.sql.Timestamp
 
 @Entity
 class Fruit {
@@ -12,10 +13,12 @@ class Fruit {
     @GeneratedValue
     Long id
 
-    @Column
+    @Column(name = "fruit_name", nullable = false)
     String fruitName
-    @Column
+
+    @Column(nullable = false)
     String color
 
-
+    @Column(name = "date_created")
+    Timestamp dateCreated
 }
