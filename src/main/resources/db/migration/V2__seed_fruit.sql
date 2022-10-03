@@ -1,0 +1,10 @@
+insert into fruit(color, fruit_name, date_created) values ('red', 'apple', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('blue', 'apple', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('red', 'apple', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('red', 'apple', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('blue', 'apple', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('yellow', 'banana', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('green', 'mango', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('yellow', 'mango', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('pink', 'mango', current_timestamp);
+insert into fruit(color, fruit_name, date_created) values ('green', 'banana', current_timestamp);
