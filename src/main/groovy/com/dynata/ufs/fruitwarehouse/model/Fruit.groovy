@@ -21,4 +21,14 @@ class Fruit {
 
     @Column(name = "date_created")
     Timestamp dateCreated
+
+    boolean setFruitName(String fruitName){
+        if(fruitName.equals("onion")){
+            println "No a fruit!"
+            return false
+        }
+        
+        this.fruitName = fruitName
+        return true
+    }
 }

@@ -22,7 +22,42 @@ class FruitServiceImpl implements FruitService {
 
 
     private getAllFruits() {
-        fruitRepository.findAll()
+        List rowsResponse = fruitRepository.findAllCount()
+        ArrayList< String[] > data = new ArrayList<>();
+        int total = 0;
+
+        for(rowResponse in rowsResponse){
+            data.add(rowResponse)
+        }
+
+        Map<String,Map<String,String>> fruitsOnly = new HashMap<>()
+
+        for (i in 0..<data.size()) {
+            String[] row = data.get(i)
+            println "row = $row"
+
+            String fruit = row[0]
+            fruitsOnly.put(fruit,new HashMap<String, String>())
+        }
+
+        for (i in 0..<data.size()) {
+            String[] row = data.get(i)
+            String fruitName = row[0]
+            String color = row[1]
+            String count = row[2]
+            total += Integer.parseInt(count)
+
+            HashMap<String,String> colorCount= new HashMap<>()
+            colorCount.put("count",count)
+
+            fruitsOnly.get(fruitName).put(color,colorCount)
+        }
+
+        HashMap<String, HashMap> map = new HashMap()
+        map.put("fruits", fruitsOnly)
+        map.put("count", total)
+
+        return map
     }
 
     private Fruit saveFruit(Fruit fruit) {
